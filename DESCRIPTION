@@ -15,4 +15,8 @@ RoxygenNote: 7.1.2
 Imports: 
     dplyr,
     geofacet,
-    sf
+    ggplot2,
+    grid
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
