@@ -4,13 +4,22 @@
 \alias{utla_plot}
 \title{Map of charts faceted by Upper Tier Local Authority in England}
 \usage{
-utla_plot(
-  london_data,
-  england_data,
-  london_grid,
-  england_grid,
-  output_filename
-)
+utla_plot(london_data, england_data, london_grid, england_grid)
+}
+\arguments{
+\item{london_data}{a data table for London Upper Tier Local Authorities with
+the structure supplied from the fingertipsR package}
+
+\item{england_data}{a data table for Upper Tier Local Authorities not in
+London with the structure supplied from the fingertipsR package}
+
+\item{london_grid}{a data table with one record for each Upper Tier Local for
+the areas in London Authority, and a column for ONS Code, ONS Name, row and
+col, which refers the the x, y coordinate for the grid}
+
+\item{england_grid}{a data table with one record for each Upper Tier Local
+for the areas outside of London Authority, and a column for ONS Code, ONS
+Name, row and col, which refers the the x, y coordinate for the grid}
 }
 \description{
 Map of charts faceted by Upper Tier Local Authority in England
