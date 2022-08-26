@@ -21,18 +21,18 @@ utla_plot <- function(london_data, england_data, london_grid, england_grid) {
   image_outside_london <- ggplot(
     england_data,
     aes(
-      x = Timeperiod,
-      y = Value,
-      group = name)
+      x = .data$Timeperiod,
+      y = .data$Value,
+      group = .data$name)
     ) +
     geom_line() +
     geom_point(
-      aes(colour = ComparedtoEnglandvalueorpercentiles),
+      aes(colour = .data$ComparedtoEnglandvalueorpercentiles),
       size = 0.75
     ) +
     scale_colour_manual(name = "Compared to England",
-                        values = significance_colours,
-                        breaks = names(significance_colours)) +
+                        values = EnglandFacets::significance_colours,
+                        breaks = names(EnglandFacets::significance_colours)) +
     facet_geo(~ name,
               grid = england_grid) +
     theme_void() +
@@ -42,20 +42,22 @@ utla_plot <- function(london_data, england_data, london_grid, england_grid) {
 
 
   # Create the background for England
-  england_background <- ggplot(england_shp) +
+  england_background <- ggplot(EnglandFacets::england_shp) +
     geom_sf(colour = "gray60",
             fill = NA) +
     theme_void() # +
 
   # London
   image_london <- ggplot(london_data,
-                         aes(x = Timeperiod, y = Value, group = name)) +
+                         aes(x = .data$Timeperiod,
+                             y = .data$Value,
+                             group = .data$name)) +
     geom_line() +
-    geom_point(aes(colour = ComparedtoEnglandvalueorpercentiles),
+    geom_point(aes(colour = .data$ComparedtoEnglandvalueorpercentiles),
                size = 0.5) +
     scale_colour_manual(name = "Compared to England",
-                        values = significance_colours,
-                        breaks = names(significance_colours)) +
+                        values = EnglandFacets::significance_colours,
+                        breaks = names(EnglandFacets::significance_colours)) +
     facet_geo(~ name,
               grid = london_grid) +
     theme_void() +
@@ -64,7 +66,7 @@ utla_plot <- function(london_data, england_data, london_grid, england_grid) {
           text = element_text(face = "bold")) +
     labs(title = "London")
 
-  london_background <- ggplot(london_shp) +
+  london_background <- ggplot(EnglandFacets::london_shp) +
     geom_sf(fill = NA,
             colour = "gray60") +
     theme_void() +

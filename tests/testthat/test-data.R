@@ -17,12 +17,12 @@ test_that("Significance colours are consistent with Fingertips", {
 })
 
 test_that("England grid has correct dimensions", {
-  expect_equal(dim(no_lond),
+  expect_equal(dim(outside_london_grid),
                c(122, 4))
 })
 
 test_that("London grid has correct dimensions", {
-  expect_equal(dim(lond),
+  expect_equal(dim(london_grid),
                c(33, 4))
 })
 

@@ -1,12 +1,15 @@
 Package: EnglandFacets
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Provides data for created charts over a map of England
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R:
+    person(given = "Sebastian",
+             family = "Fox",
+             role = c("aut", "cre"),
+             email = "sebastian.fox@dhsc.gov.uk")
+Description: Contains data to support the process of creating maps of England 
+    with charts, representing Upper Tier Local Authorities, on top of the map.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: 
@@ -16,7 +19,8 @@ Imports:
     dplyr,
     geofacet,
     ggplot2,
-    grid
+    grid,
+    gridExtra
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -54,7 +54,7 @@
 #'   \item{col}{integer grid reference for where to place local authority on x axis}
 #'   \item{row}{integer grid reference for where to place local authority on y axis}
 #' }
-"lond"
+"london_grid"
 
 #' Grid coordinates for Upper Tier Local Authorities outside of London
 #'
@@ -68,5 +68,5 @@
 #'   \item{col}{integer grid reference for where to place local authority on x axis}
 #'   \item{row}{integer grid reference for where to place local authority on y axis}
 #' }
-"no_lond"
+"outside_london_grid"
 
