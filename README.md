@@ -27,5 +27,43 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(EnglandFacets)
-## basic example code
+
+grid_london <- EnglandFacets::london_grid
+grid_no_london <- EnglandFacets::outside_london_grid
+
+df <- fingertipsR::fingertips_data(
+        IndicatorID = 92488,
+        AreaTypeID = 402
+)
+
+df <- df |> 
+        dplyr::rename(
+                name = AreaName, 
+                code = AreaCode) |> 
+        dplyr::mutate(
+                name = abbreviate(name, 6))
+
+shp_eng <- EnglandFacets::england_shp
+
+shp_lond <- EnglandFacets::london_shp
+
+
+england_data <- df |> 
+        dplyr::filter(code %in% grid_no_london$code,
+                      AreaType == "Counties & UAs (from Apr 2021)",
+                      Sex == "Persons")
+london_data <- df |> 
+        dplyr::filter(code %in% grid_london$code,
+                      AreaType == "Counties & UAs (from Apr 2021)",
+                      Sex == "Persons")
 ```
+
+``` r
+EnglandFacets::utla_plot(
+        london_data = london_data,
+        england_data = england_data,
+        london_grid = grid_london,
+        england_grid = grid_no_london)
+```
+
+<img src="man/figures/README-outputs-1.png" width="100%" />
