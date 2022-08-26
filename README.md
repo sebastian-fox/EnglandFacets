@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/sebastian-fox/EnglandFacets/workflows/R-CMD-check/badge.svg)](https://github.com/sebastian-fox/EnglandFacets/actions)
+[![test-coverage](https://github.com/sebastian-fox/EnglandFacets/workflows/test-coverage/badge.svg)](https://github.com/sebastian-fox/EnglandFacets/actions)
 <!-- badges: end -->
 
 The goal of EnglandFacets is to provide grids and sf files to allow
